@@ -16,8 +16,8 @@ Or in VSCode: `Ctrl+Shift+P` → "Python: Create Environment" → select venv
 
 1. Connect camera (`/dev/video0`) and projector
 2. Activate venv: `source .venv/bin/activate`
-3. Run: `QT_QPA_PLATFORM=xcb python ThomasStarterScript.py`
-4. Position camera using preview window, press Enter when ready
+3. Run: `python ThomasStarterScript.py`
+4. Position camera using preview window, press Enter in the camera preview window when ready
 5. Wait for calibration circles (~40 seconds)
 6. Live warped feed will display on projector
 
@@ -29,7 +29,7 @@ Or in VSCode: `Ctrl+Shift+P` → "Python: Create Environment" → select venv
 ## Notes
 
 - Python 3.10+ required (3.10 on Jetson JetPack 6.2, 3.12 on Ubuntu 24.04)
-- `QT_QPA_PLATFORM=xcb` avoids Wayland/Qt conflicts with OpenCV windows
+- If you get Qt/display errors, try: `QT_QPA_PLATFORM=xcb python ThomasStarterScript.py`
 
 ## Contributors
 
