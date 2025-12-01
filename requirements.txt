@@ -1,0 +1,7 @@
+# Python 3.10 required (Jetson Orin Nano Super / JetPack 6.2)
+#
+# On Jetson: OpenCV is pre-installed via JetPack - do NOT pip install opencv-python
+# On desktop: pip install -r requirements.txt
+
+opencv-python==4.11.0.86  # Desktop only - matches Jetson's system OpenCV 4.11
+numpy==1.26.4             # Must be 1.26.x for Jetson/PyTorch compatibility
