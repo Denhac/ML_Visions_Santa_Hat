@@ -11,7 +11,7 @@ cv2.setWindowProperty("projector", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREE
 # Show camera preview so user can position camera
 cv2.namedWindow("camera_preview", cv2.WINDOW_NORMAL)
 print("Camera preview window open. Position camera to see the projector area.")
-print("Press Enter in terminal when ready to start calibration.")
+print("Press Enter in the camera preview window when ready to start calibration.")
 
 temp_cap = cv2.VideoCapture("/dev/video0")
 while True:
@@ -131,13 +131,13 @@ def calibrate(window,cam,proj_size=(1920-100,1080-100)):
 transform = calibrate("projector",cam)
 
 print("Calibration complete! Live feed starting on projector...")
-print("Press 'q' in debug window or Ctrl+C in terminal to quit.")
+print("Press 'q' in the monitor window or Ctrl+C in terminal to quit.")
 
 # Re-ensure fullscreen on projector
 cv2.setWindowProperty("projector", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 
-# Debug window on laptop screen
-cv2.namedWindow("debug", cv2.WINDOW_NORMAL)
+# Monitor window on laptop screen
+cv2.namedWindow("monitor", cv2.WINDOW_NORMAL)
 
 prev = None
 try:
@@ -154,7 +154,7 @@ try:
 
         prev = maybe.copy()
         cv2.imshow("projector", draw.astype(np.uint8))
-        cv2.imshow("debug", draw.astype(np.uint8))  # Show on laptop too
+        cv2.imshow("monitor", draw.astype(np.uint8))  # Show on laptop too
         key = cv2.waitKey(250) & 0xFF
         if key == ord('q'):
             break
