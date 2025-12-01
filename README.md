@@ -17,7 +17,7 @@ Or in VSCode: `Ctrl+Shift+P` → "Python: Create Environment" → select venv
 1. Connect camera (`/dev/video0`) and projector
 2. Activate venv: `source .venv/bin/activate`
 3. Run: `QT_QPA_PLATFORM=xcb python ThomasStarterScript.py`
-4. Position camera using preview window, press `q` when ready
+4. Position camera using preview window, press Enter when ready
 5. Wait for calibration circles (~40 seconds)
 6. Live warped feed will display on projector
 
